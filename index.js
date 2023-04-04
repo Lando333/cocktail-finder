@@ -1,12 +1,15 @@
 const baseUrl = 'https://www.thecocktaildb.com/api/json/v1/1/'
 const ingredientUrl = baseUrl + 'filter.php?i='
 const cocktailUrl = baseUrl + 'search.php?s='
+
 const submitForm = document.getElementById('search-form')
 const resultsList = document.getElementById('results-list')
 
-const recipeDiv = document.getElementById('text-box')
-const imageDiv = document.getElementById('image-box')
-const drinkName = document.createElement('li')
+const recipeTextBox = document.getElementById('text-box')
+const cocktailImage = document.getElementById('image')
+
+const drinkName = document.getElementById('cocktail-name')
+const instructionP = document.getElementById('instruction')
 
 submitForm.addEventListener('submit', (e) => {
     e.preventDefault()
@@ -17,7 +20,6 @@ submitForm.addEventListener('submit', (e) => {
     else if (document.getElementById('element_2').checked)
         fetchCocktails(searchWord)
     submitForm.reset()
-    
 })
 
 function fetchIngredient(searchWord) {
@@ -39,20 +41,28 @@ function renderDrink(drink) {
     li.innerText = drink.strDrink
     resultsList.appendChild(li)
     li.addEventListener('click', () => {
-        recipeDiv.innerHTML = ""
-        imageDiv.innerHTML = ""
+        recipeTextBox.innerHTML = ""
+        cocktailImage.innerHTML = ""
         populateRecipe(drink)
     })
 }
 
 function populateRecipe(recipe) {
-    
     drinkName.innerText = recipe.strDrink
-    recipeDiv.appendChild(drinkName)
+    recipeTextBox.appendChild(drinkName)
 
-    const drinkImage = document.createElement('img')
-    drinkImage.src = recipe.strDrinkThumb
-    imageDiv.appendChild(drinkImage)
+    populateIngredients(recipe)
 
-    console.log(recipe)
+    instructionP.innerText = recipe.strInstructions
+    recipeTextBox.appendChild(instructionP)
+    
+    cocktailImage.src = recipe.strDrinkThumb
+}
+
+function populateIngredients(recipe) {
+    for (const key in recipe) {
+        if (recipe[key] !== null && key.substring(0, 13) == "strIngredient") {
+            console.log(recipe[key])
+        }
+    }
 }
