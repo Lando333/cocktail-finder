@@ -11,12 +11,12 @@
 </head>
 
 <body>
-    <h1 >Cocktail Recipe Search</h1>
+    <h1>Cocktail Recipe Search</h1>
     <form id="search-form">
         <h3>Do you have an ingredient or a cocktail?</h3><br />
         <input name="search" type="text"><input type="submit"><br />
-        <input id= "element_1" type="radio" name="cocktail" class="radio" value="Ingredient">Ingredient<br />
-        <input id= "element_2" type="radio" name="cocktail" class="radio" value="Cocktail">Cocktail Name<br />
+        <input id="element_1" type="radio" name="cocktail" class="radio" value="Ingredient">Ingredient<br />
+        <input id="element_2" type="radio" name="cocktail" class="radio" value="Cocktail">Cocktail Name<br />
     </form>
     <div id="results-box">
         <ul id="results-list">
@@ -25,15 +25,16 @@
     <div id="recipe-box">
         <div id="text-box" class="recipe">
             <h4 id="cocktail-name"></h4>
-            <section>
-                <ul id="cocktail-recipe">
-                </ul>
-            </section><br />
-            <section id="instruction">
-            </section>
+            <br />
+            <ul id="cocktail-recipe">
+            </ul>
+            <br />
+            <p id="instruction"></p>
         </div>
         <div id="image-box" class="cocktail-image">
+            <img id="image">
         </div>
     </div>
 </body>
+
 </html>
