@@ -17,11 +17,16 @@ h1 {
     color: burlywood;
     text-align: center;
 }
-.checkbox {
-    text-align: left;
+/* input.radio {
+ 
+    
+ 
 
-}
+}  */
 
 ul{
     list-style-type: none;
+    display: grid;
+    grid-template-columns:repeat(3, auto);
 }
+
