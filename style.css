@@ -9,7 +9,7 @@ body {
 }
 #search-form{
     text-align: center;
-    padding-top: 80px;
+    padding-top: 50px;
     color: azure;
 }
 
@@ -18,6 +18,10 @@ h1 {
     text-align: center;
 }
 .checkbox {
-    text-align:left;
+    text-align: left;
 
+}
+
+ul{
+    list-style-type: none;
 }
