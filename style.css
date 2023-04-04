@@ -17,11 +17,15 @@ h1 {
     color: burlywood;
     text-align: center;
 }
-.checkbox {
-    text-align: left;
+/* .radio {
+    display:
+    flex-direction:column;
 
-}
+}  */
 
 ul{
     list-style-type: none;
+    display: grid;
+    grid-template-columns:repeat(3, auto);
 }
+
