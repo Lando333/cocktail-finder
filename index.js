@@ -11,6 +11,7 @@ const ingredientsList = document.getElementById('cocktail-ingredients')
 const instructionP = document.getElementById('instruction')
 const cocktailImage = document.getElementById('image')
 
+
 submitForm.addEventListener('submit', (e) => {
     e.preventDefault()
     resultsList.innerHTML = ""
@@ -22,21 +23,48 @@ submitForm.addEventListener('submit', (e) => {
     submitForm.reset()
 })
 
+// This is where the ingredient search takes place
+// Search term is rendered to the results list
 function fetchIngredient(searchWord) {
     fetch(ingredientUrl + searchWord)
         .then(r => r.json())
-        .then(cocktailData => renderSearchList(cocktailData))
+        .then(cocktailData => renderIngredientList(cocktailData))
 }
+function renderIngredientList(list) {
+    list.drinks.forEach(element => renderIngredient(element));
+}
+// Here the results list is populated
+function renderIngredient(drink) {
+    const li = document.createElement('li')
+    li.innerText = drink.strDrink
+    resultsList.appendChild(li)
+    li.addEventListener('click', () => {
+        drinkName.innerHTML = ""
+        measurementsList.innerHTML = ""
+        ingredientsList.innerHTML = ""
+        instructionP.innerHTML = ""
+        cocktailImage.innerHTML = ""
+        fetchIngredientCocktail(drink.strDrink)
+    })
+}
+// Here is a second fetch to grab the full recipe
+// The original Ingredients search object does not contain all the data
+function fetchIngredientCocktail(searchWord) {
+    fetch(cocktailUrl + searchWord)
+        .then(r => r.json())
+        .then(cocktailData => populateRecipe(cocktailData.drinks[0]))
+}
+
+// This is where the Cocktail Name search takes place
 function fetchCocktails(searchWord) {
     fetch(cocktailUrl + searchWord)
         .then(r => r.json())
-        .then(cocktailData => renderSearchList(cocktailData))
+        .then(cocktailData => renderCocktailList(cocktailData))
 }
-
-function renderSearchList(list) {
-    list.drinks.forEach(element => renderDrink(element));
+function renderCocktailList(list) {
+    list.drinks.forEach(element => renderCocktail(element));
 }
-function renderDrink(drink) {
+function renderCocktail(drink) {
     const li = document.createElement('li')
     li.innerText = drink.strDrink
     resultsList.appendChild(li)
