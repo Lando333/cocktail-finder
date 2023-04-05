@@ -5,11 +5,11 @@ const cocktailUrl = baseUrl + 'search.php?s='
 const submitForm = document.getElementById('search-form')
 const resultsList = document.getElementById('results-list')
 
-const recipeTextBox = document.getElementById('text-box')
-const cocktailImage = document.getElementById('image')
-
 const drinkName = document.getElementById('cocktail-name')
+const measurementsList = document.getElementById('cocktail-measurements')
+const ingredientsList = document.getElementById('cocktail-ingredients')
 const instructionP = document.getElementById('instruction')
+const cocktailImage = document.getElementById('image')
 
 submitForm.addEventListener('submit', (e) => {
     e.preventDefault()
@@ -41,7 +41,10 @@ function renderDrink(drink) {
     li.innerText = drink.strDrink
     resultsList.appendChild(li)
     li.addEventListener('click', () => {
-        recipeTextBox.innerHTML = ""
+        drinkName.innerHTML = ""
+        measurementsList.innerHTML = ""
+        ingredientsList.innerHTML = ""
+        instructionP.innerHTML = ""
         cocktailImage.innerHTML = ""
         populateRecipe(drink)
     })
@@ -49,20 +52,24 @@ function renderDrink(drink) {
 
 function populateRecipe(recipe) {
     drinkName.innerText = recipe.strDrink
-    recipeTextBox.appendChild(drinkName)
-
-    populateIngredients(recipe)
-
+    measurementsAndIngredients(recipe)
     instructionP.innerText = recipe.strInstructions
-    recipeTextBox.appendChild(instructionP)
-    
     cocktailImage.src = recipe.strDrinkThumb
 }
 
-function populateIngredients(recipe) {
+function measurementsAndIngredients(recipe) {
     for (const key in recipe) {
-        if (recipe[key] !== null && key.substring(0, 13) == "strIngredient") {
-            console.log(recipe[key])
+        if (recipe[key] !== null) {
+            const li = document.createElement('li')
+
+            if (key.substring(0, 10) === "strMeasure") {
+                li.innerText = recipe[key]
+                measurementsList.appendChild(li)
+            }
+            if (key.substring(0, 13) === "strIngredient") {
+                li.innerText = recipe[key]
+                ingredientsList.appendChild(li)
+            }
         }
     }
 }
