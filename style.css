@@ -12,7 +12,6 @@ body {
     padding-top: 50px;
     color: azure;
 }
-
 h1 {
     color: burlywood;
     text-align: center;
@@ -23,7 +22,6 @@ ul#results-list{
     grid-template-columns:repeat(3, auto);
     color: black;
 }
-
 ul {
     padding: 6px;
     list-style-type: none;
@@ -35,34 +33,37 @@ div.ingredients{
     position: relative;
     overflow: auto;
     margin: auto;
-}div#recipe-box {
-    position: relative;
-    height: auto;
+}
+div#recipe-box {
     background-color: rgb(88, 87, 126);
-    margin: auto;
     width: 66%;
-    overflow: hidden;
-    white-space: nowrap;
     padding-left: 20px;
     padding-right: 20px;
+    display: flexbox;
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+    white-space: normal;
+}
+div#recipe-text{
+    float: left;
+    width: 50%;
+}
+img {
+    position: relative;
+    float: right;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 45%;
+    margin: auto;
 }
 
 div:empty {
     grid-area: div;
     display: none;
 }
-img {
-    float: right;
-}
-/*
-img{
-    position: absolute;
-    right: 20;
-    top: 10px;
-}
 p {
+    position: relative;
     margin: auto;
-    width: 40px;
     float: left;
 }
-*/
