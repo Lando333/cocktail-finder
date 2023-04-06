@@ -1,6 +1,12 @@
+
 body {
     background-color: black;
     color: white;
+}
+#page-header {
+    color: #FFDE00;
+    font-size: 60px;
+    text-align: center;
 }
 #results-box {
     text-align: center;
@@ -12,11 +18,6 @@ body {
     text-align: center;
     padding-top: 50px;
     color: azure;
-}
-h1 {
-    color: #FFDE00;
-    font-size: 60px;
-    text-align: center;
 }
 #results-list{
     background-color: #6599FF;
@@ -90,6 +91,7 @@ img {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-align: center;
 }
 
 #design {

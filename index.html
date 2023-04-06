@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <h1>Cocktail Recipe Search</h1>
+    <h1 id="page-header">Cocktail Recipe Search</h1>
     <div id="design">
         <div class="glass">
             <div class="head">
@@ -21,14 +21,19 @@
             <div class="base"></div>
         </div>
     </div>
-    <form id="search-form">
-        <h3>Do you have an ingredient or a cocktail?</h3><br />
-        <input name="search" type="text"><input type="submit"><br />
-        <input id="element_1" type="radio" name="cocktail" class="radio" value="Ingredient" checked="checked">
-        <label for="element_1">Ingredient</label><br />
-        <input id="element_2" type="radio" name="cocktail" class="radio" value="Cocktail">
-        <label for="element_2">Cocktail Name</label><br />
-    </form>
+    <div id="form-div">
+        <form id="search-form">
+            <h3>Do you have an ingredient or a cocktail?</h3><br />
+            <input name="search" type="text"><input type="submit"><br />
+            <input id="element_1" type="radio" name="cocktail" class="radio" value="Ingredient" checked="checked">
+            <label for="element_1">Ingredient</label><br />
+            <input id="element_2" type="radio" name="cocktail" class="radio" value="Cocktail">
+            <label for="element_2">Cocktail Name</label><br />
+        </form><br />
+        <div class="vertical-center">
+            <button type="button" onclick="fetchRandom()">Click Me For A Random Cocktail!</button><br /><br />
+        </div>
+    </div>
     <div id="results-box">
         <ul id="results-list">
         </ul>

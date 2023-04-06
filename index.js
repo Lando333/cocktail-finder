@@ -1,6 +1,7 @@
 const baseUrl = 'https://www.thecocktaildb.com/api/json/v1/1/'
 const ingredientUrl = baseUrl + 'filter.php?i='
 const cocktailUrl = baseUrl + 'search.php?s='
+const randomCocktailUrl = baseUrl + 'random.php'
 
 const submitForm = document.getElementById('search-form')
 const resultsList = document.getElementById('results-list')
@@ -70,6 +71,13 @@ function renderCocktail(drink) {
         populateRecipeCard(drink)
     })
 }
+function fetchRandom() {
+    clearRecipeCard()
+    fetch(randomCocktailUrl)
+        .then(r => r.json())
+        .then(cocktailData => populateRecipeCard(cocktailData.drinks[0]))
+}
+
 
 function clearRecipeCard() {
     drinkName.innerHTML = ""
