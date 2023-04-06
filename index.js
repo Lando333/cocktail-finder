@@ -39,11 +39,7 @@ function renderIngredient(drink) {
     li.innerText = drink.strDrink
     resultsList.appendChild(li)
     li.addEventListener('click', () => {
-        drinkName.innerHTML = ""
-        measurementsList.innerHTML = ""
-        ingredientsList.innerHTML = ""
-        instructionP.innerHTML = ""
-        cocktailImage.innerHTML = ""
+        clearRecipeCard()
         fetchIngredientCocktail(drink.strDrink)
     })
 }
@@ -52,7 +48,7 @@ function renderIngredient(drink) {
 function fetchIngredientCocktail(searchWord) {
     fetch(cocktailUrl + searchWord)
         .then(r => r.json())
-        .then(cocktailData => populateRecipe(cocktailData.drinks[0]))
+        .then(cocktailData => populateRecipeCard(cocktailData.drinks[0]))
 }
 
 // This is where the Cocktail Name search takes place
@@ -64,21 +60,25 @@ function fetchCocktails(searchWord) {
 function renderCocktailList(list) {
     list.drinks.forEach(element => renderCocktail(element));
 }
+// Here the results list is populated
 function renderCocktail(drink) {
     const li = document.createElement('li')
     li.innerText = drink.strDrink
     resultsList.appendChild(li)
     li.addEventListener('click', () => {
-        drinkName.innerHTML = ""
-        measurementsList.innerHTML = ""
-        ingredientsList.innerHTML = ""
-        instructionP.innerHTML = ""
-        cocktailImage.innerHTML = ""
-        populateRecipe(drink)
+        clearRecipeCard()
+        populateRecipeCard(drink)
     })
 }
 
-function populateRecipe(recipe) {
+function clearRecipeCard() {
+    drinkName.innerHTML = ""
+    measurementsList.innerHTML = ""
+    ingredientsList.innerHTML = ""
+    instructionP.innerHTML = ""
+    cocktailImage.innerHTML = ""
+}
+function populateRecipeCard(recipe) {
     drinkName.innerText = recipe.strDrink
     measurementsAndIngredients(recipe)
     instructionP.innerText = recipe.strInstructions

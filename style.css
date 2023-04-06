@@ -1,8 +1,8 @@
 body {
     background-color: black;
+    color: white;
 }
 #results-box {
-    background-color: darkgray;
     text-align: center;
     margin: auto;
     width: 50%;
@@ -17,16 +17,52 @@ h1 {
     color: burlywood;
     text-align: center;
 }
-/* input.radio {
- 
-    
- 
-
-}  */
-
-ul{
-    list-style-type: none;
+ul#results-list{
+    background-color: darkgray;
     display: grid;
     grid-template-columns:repeat(3, auto);
+    color: black;
 }
 
+ul {
+    padding: 6px;
+    list-style-type: none;
+    display: inline-block;
+    object-fit: contain;
+}
+div.ingredients{
+    float: left;
+    position: relative;
+    overflow: auto;
+    margin: auto;
+}div#recipe-box {
+    position: relative;
+    height: auto;
+    background-color: rgb(88, 87, 126);
+    margin: auto;
+    width: 66%;
+    overflow: hidden;
+    white-space: nowrap;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+div:empty {
+    grid-area: div;
+    display: none;
+}
+img {
+    float: right;
+}
+/*
+img{
+    position: absolute;
+    right: 20;
+    top: 10px;
+}
+p {
+    margin: auto;
+    width: 40px;
+    float: left;
+}
+*/
