@@ -8,6 +8,13 @@ body {
     font-size: 60px;
     text-align: center;
 }
+#button-div {
+    text-align: center;
+}
+button{
+    height: 30px;
+    width: 240px;
+}
 #results-box {
     text-align: center;
     margin: auto;
@@ -39,9 +46,9 @@ ul {
     display: inline-block;
     object-fit: contain;
 }
-div#recipe-box {
+#recipe-box {
     background-color: #097054;
-    width: 66%;
+    width: 60%;
     padding-left: 20px;
     padding-right: 20px;
     display: flexbox;
@@ -50,7 +57,7 @@ div#recipe-box {
     overflow: hidden;
     white-space: normal;
 }
-div#recipe-text{
+#recipe-text{
     margin: auto;
     float: left;
     width: 50%;
@@ -59,6 +66,7 @@ div#recipe-text{
 #cocktail-name{
     font-size: 30px;
     text-align: center;
+    padding-top: 20px;
 }
 .ingredients{
     font-size: 20px;
@@ -68,7 +76,7 @@ div#recipe-text{
     margin: auto;
     
 }
-#instruction {
+#instruction-div {
     position: relative;
     margin: auto;
     float: left;
@@ -91,7 +99,6 @@ img {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    text-align: center;
 }
 
 #design {

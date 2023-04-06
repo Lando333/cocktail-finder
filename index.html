@@ -23,14 +23,14 @@
     </div>
     <div id="form-div">
         <form id="search-form">
-            <h3>Do you have an ingredient or a cocktail?</h3><br />
+            <h3>Searching for an ingredient or a cocktail?</h3><br />
             <input name="search" type="text"><input type="submit"><br />
             <input id="element_1" type="radio" name="cocktail" class="radio" value="Ingredient" checked="checked">
             <label for="element_1">Ingredient</label><br />
             <input id="element_2" type="radio" name="cocktail" class="radio" value="Cocktail">
             <label for="element_2">Cocktail Name</label><br />
         </form><br />
-        <div class="vertical-center">
+        <div id="button-div">
             <button type="button" onclick="fetchRandom()">Click Me For A Random Cocktail!</button><br /><br />
         </div>
     </div>
@@ -40,14 +40,16 @@
     </div>
     <div id="recipe-box">
         <div id="recipe-text">
-            <h4 id="cocktail-name"></h4>
+            <h4 id="cocktail-name"></h4><br /><br />
             <div class="ingredients">
                 <ul id="cocktail-measurements"></ul>
             </div>
             <div class="ingredients">
                 <ul id="cocktail-ingredients"></ul>
-            </div> 
-            <p id="instruction"></p>
+            </div>
+            <div id="instruction-div"><br />
+                <p id="instruction"></p>
+            </div>
         </div>
         <img id="image">
     </div>
