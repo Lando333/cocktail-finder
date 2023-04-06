@@ -14,11 +14,12 @@ body {
     color: azure;
 }
 h1 {
-    color: rgb(230, 173, 100);
+    color: #FFDE00;
+    font-size: 60px;
     text-align: center;
 }
 #results-list{
-    background-color: rgb(148, 148, 148);
+    background-color: #6599FF;
     display: grid;
     grid-template-columns:repeat(3, auto);
     color: black;
@@ -38,7 +39,7 @@ ul {
     object-fit: contain;
 }
 div#recipe-box {
-    background-color: rgb(88, 87, 126);
+    background-color: #097054;
     width: 66%;
     padding-left: 20px;
     padding-right: 20px;
