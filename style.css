@@ -6,6 +6,7 @@ body {
     text-align: center;
     margin: auto;
     width: 50%;
+    padding-bottom: 20px;
 }
 #search-form{
     text-align: center;
@@ -13,14 +14,22 @@ body {
     color: azure;
 }
 h1 {
-    color: burlywood;
+    color: rgb(230, 173, 100);
     text-align: center;
 }
 #results-list{
-    background-color: darkgray;
+    background-color: rgb(148, 148, 148);
     display: grid;
     grid-template-columns:repeat(3, auto);
     color: black;
+}
+#results-list li {
+    cursor: pointer;
+    margin: 6px;
+}
+#results-list li:hover {
+    text-decoration: underline;
+    color: rgb(255, 245, 227)
 }
 ul {
     padding: 6px;
@@ -40,8 +49,10 @@ div#recipe-box {
     white-space: normal;
 }
 div#recipe-text{
+    margin: auto;
     float: left;
     width: 50%;
+    position: relative;
 }
 #cocktail-name{
     font-size: 30px;
