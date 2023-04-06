@@ -16,7 +16,7 @@ h1 {
     color: burlywood;
     text-align: center;
 }
-ul#results-list{
+#results-list{
     background-color: darkgray;
     display: grid;
     grid-template-columns:repeat(3, auto);
@@ -27,12 +27,6 @@ ul {
     list-style-type: none;
     display: inline-block;
     object-fit: contain;
-}
-div.ingredients{
-    float: left;
-    position: relative;
-    overflow: auto;
-    margin: auto;
 }
 div#recipe-box {
     background-color: rgb(88, 87, 126);
@@ -49,6 +43,25 @@ div#recipe-text{
     float: left;
     width: 50%;
 }
+#cocktail-name{
+    font-size: 30px;
+    text-align: center;
+}
+.ingredients{
+    font-size: 20px;
+    float: left;
+    position: relative;
+    overflow: auto;
+    margin: auto;
+    
+}
+#instruction {
+    position: relative;
+    margin: auto;
+    float: left;
+    flex-direction: column;
+    font-size: 20px;
+}
 img {
     position: relative;
     float: right;
@@ -57,13 +70,7 @@ img {
     width: 45%;
     margin: auto;
 }
-
 div:empty {
     grid-area: div;
     display: none;
-}
-p {
-    position: relative;
-    margin: auto;
-    float: left;
 }
